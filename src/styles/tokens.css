@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light;
+  --paper: #f9f7f2;
+  --paper-soft: #f0eee9;
+  --paper-dim: #dbdad5;
+  --white: #ffffff;
+  --ink: #222222;
+  --ink-soft: #424752;
+  --muted: #5f6470;
+  --blue: #0055aa;
+  --blue-deep: #003e7f;
+  --blue-pale: #b3cdff;
+  --line: #d1cec7;
+  --line-strong: #727783;
+  --error: #ba1a1a;
+  --folder-ink: #003e7f;
+  --folder-accent: #0055aa;
+  --folder-cyan: #8ed7e5;
+  --folder-cyan-soft: #a9e0e9;
+  --folder-cyan-pale: #e1f6f8;
+  --folder-paper: #e8e5dc;
+  --shadow-hard: 4px 4px 0 var(--ink);
+  --display: "Chivo", "Arial Black", Impact, sans-serif;
+  --body: "Hanken Grotesk", Inter, ui-sans-serif, system-ui, sans-serif;
+  --mono: "JetBrains Mono", "Space Mono", ui-monospace, monospace;
+  --container: min(1320px, calc(100% - clamp(48px, 8vw, 96px)));
+  --grid-gutter: clamp(16px, 2vw, 24px);
+  --section-gap: clamp(80px, 10vw, 150px);
+  --header-height: 76px;
+}
+

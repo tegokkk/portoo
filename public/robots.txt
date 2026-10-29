@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tego-saputra.vercel.app/sitemap.xml
