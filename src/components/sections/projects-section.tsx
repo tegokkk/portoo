@@ -43,7 +43,7 @@ export function ProjectsSection({ onOpenProject }: ProjectsSectionProps) {
               <a className="secondary-button" href={project.repo} target="_blank" rel="noopener noreferrer"><Code2 size={16} /> Repo</a>
             </div>
           </div>
-          <div className="project-deck-preview"><CardDeckCarousel className="project-deck" slides={slides} activeIndex={selected} onChange={setSelected} height="460px" cardWidth="min(100%, 600px)" aspect="16 / 10" scatter={5} autoplay={0} background="var(--paper-soft)" ink="var(--ink)" ariaLabel="Selected projects. Use arrow keys or drag to change project." /><p className="deck-hint">Drag a card or use the arrows to explore.</p></div>
+          <div className="project-deck-preview"><CardDeckCarousel className="project-deck" slides={slides} activeIndex={selected} onChange={setSelected} height="460px" cardWidth="min(100%, 600px)" aspect="2 / 1" scatter={5} autoplay={0} background="var(--paper-soft)" ink="var(--ink)" ariaLabel="Selected projects. Use arrow keys or drag to change project." /><p className="deck-hint">Drag a card or use the arrows to explore.</p></div>
         </div>
         <div className="projects-footer-note"><span>TEGO SAPUTRA</span><span>4 projects / Web development</span></div>
       </SectionReveal>

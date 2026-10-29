@@ -57,12 +57,25 @@ try {
 
   const names = ['ABSENAPEL','CARIMAKAN','POINTER PHOTOBOOTH','DECORMOMENT.BDL']
   const repos = ['ABSENAPEL','CARIMAKAN','PHOTOBOOTH1','DECORMOMENT.BDL']
+  let projectGeometry
   for (let i=0;i<4;i++) {
     const picker = page.locator('.project-picker button').nth(i)
     await picker.click()
     assert.equal(await page.locator('.project-deck-copy h3').innerText(), names[i])
     assert.equal(await page.locator('.cd-card[data-top="1"] img').getAttribute('alt'),`Preview ${names[i]}`)
     assert.equal(await page.locator('.project-links a').last().getAttribute('href'),`https://github.com/tegokkk/${repos[i]}`)
+    const geometry = await page.evaluate(() => {
+      const bounds = selector => {
+        const rect = document.querySelector(selector).getBoundingClientRect()
+        return [rect.x + scrollX, rect.y + scrollY, rect.width, rect.height].map(Math.round)
+      }
+      const image = document.querySelector('.cd-card[data-top="1"] img')
+      return { copy: bounds('.project-deck-copy'), deck: bounds('.project-deck.cd-root'), card: bounds('.cd-card[data-top="1"]'), fit: getComputedStyle(image).objectFit }
+    })
+    assert.equal(geometry.fit, 'cover', 'Project screenshot fills the preview frame')
+    assert(Math.abs(geometry.card[2] / geometry.card[3] - 2) < .02, 'Project preview has a consistent 2:1 ratio')
+    if (projectGeometry) assert.deepEqual(geometry, projectGeometry, 'All project slides share the same layout and size')
+    else projectGeometry = geometry
     const trigger = page.locator('.project-links button')
     await trigger.click()
     assert((await page.locator('.modal h2').innerText()).includes(names[i]))
