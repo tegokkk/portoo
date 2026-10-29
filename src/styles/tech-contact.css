@@ -137,6 +137,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  position: relative;
   min-height: 42px;
   border: 0;
   background: var(--paper-soft);
@@ -145,12 +146,34 @@
   font-family: var(--mono);
   font-size: 10px;
   font-weight: 600;
+  transition: transform 220ms cubic-bezier(.22, 1, .36, 1), box-shadow 220ms ease, background-color 220ms ease, color 220ms ease;
 }
 
 .tech-icon img {
   width: 18px;
   height: 18px;
   filter: grayscale(1) contrast(1.2);
+  transition: filter 220ms ease, transform 220ms cubic-bezier(.22, 1, .36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tech-icon:hover {
+    z-index: 1;
+    transform: translate(-3px, -3px);
+    box-shadow: 4px 4px 0 var(--blue-deep);
+    background: var(--folder-cyan-pale);
+    color: var(--blue-deep);
+  }
+
+  .tech-icon:hover img {
+    filter: grayscale(0) contrast(1);
+    transform: scale(1.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-icon, .tech-icon img { transition: none; }
+  .tech-icon:hover, .tech-icon:hover img { transform: none; }
 }
 
 .contact-paper {
