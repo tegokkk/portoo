@@ -15,8 +15,8 @@ export function TechSection() {
             <p>Core Catalog</p>
           </div>
           <p lang="id">
-            Skill dikelompokkan berdasarkan peran di project: interface, API, database, auth, dan
-            deployment. Digunakan di ABSENAPEL, CARIMAKAN, PHOTOBOOTH, dan DECORMOMENT.
+            Teknologi yang saya gunakan dalam proyek web yang sudah dipublikasikan serta pekerjaan
+            lokal untuk aplikasi Android, sistem kampus, transaksi digital, dan eksperimen AI.
           </p>
         </div>
         <div className="core-stack" aria-label="Core technologies"><span>Core technologies</span><strong>React / Next.js / Node.js / PostgreSQL</strong></div>

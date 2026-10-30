@@ -1,4 +1,4 @@
-import { AtSign, Code2, Cpu, Database, Globe2, Mail, Server, ShieldCheck } from "lucide-react"
+import { AtSign, Bot, Code2, Cpu, Database, Globe2, Mail, Server, ShieldCheck, Smartphone } from "lucide-react"
 import type {
   Certificate,
   NavItem,
@@ -290,18 +290,21 @@ const techStack: TechStackGroup[] = [
       "GSAP",
       "Lenis",
       "Axios",
+      "HTML / CSS / JavaScript",
     ],
   },
   {
-    category: "Backend",
+    category: "Backend & API",
     icon: Server,
-    values: ["Node.js", "Express", "Prisma ORM"],
+    values: ["Node.js", "Express", "Next.js API", "PHP", "Python", "Prisma ORM", "REST API"],
   },
-  { category: "Database", icon: Database, values: ["PostgreSQL", "Supabase"] },
+  { category: "Database", icon: Database, values: ["PostgreSQL", "MySQL / MariaDB", "Supabase"] },
+  { category: "Mobile", icon: Smartphone, values: ["Flutter", "Dart", "Android"] },
+  { category: "AI & voice", icon: Bot, values: ["Vercel AI SDK", "Google Gemini", "OpenAI API", "SpeechRecognition", "pyttsx3"] },
   {
-    category: "Auth & tooling",
+    category: "Security & tooling",
     icon: ShieldCheck,
-    values: ["JWT", "Bcrypt", "Zod", "ESLint", "GitHub", "Netlify", "Vercel"],
+    values: ["JWT", "Bcrypt", "Zod", "Joi", "Playwright", "Vitest", "Docker", "GitHub", "Netlify", "Vercel"],
   },
 ]
 
