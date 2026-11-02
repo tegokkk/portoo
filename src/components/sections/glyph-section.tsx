@@ -12,7 +12,7 @@ export function GlyphSection({ children }: { children: ReactNode }) {
       if (mounted && !settled) { settled = true; setFont(family) }
     }
     const timeout = window.setTimeout(() => finish('"Arial Black"'), 1800)
-    void document.fonts.load('900 100px "Chivo"', "WORK").then(
+    void document.fonts.load('900 100px "Chivo"', "PORTO").then(
       (faces) => { if (faces.length) { clearTimeout(timeout); finish('"Chivo"') } },
       () => { clearTimeout(timeout); finish('"Arial Black"') },
     )
@@ -22,7 +22,7 @@ export function GlyphSection({ children }: { children: ReactNode }) {
   return (
     <GlyphPortal
       className="portfolio-glyph"
-      word="WORK"
+      word="PORTO"
       fontFamily={font}
       fontWeight={900}
       scrollLength={1.15}

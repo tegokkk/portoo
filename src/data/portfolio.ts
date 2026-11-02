@@ -21,7 +21,7 @@ const profile: Profile = {
   email: "tegosaputra02@gmail.com",
   status: "Available for Projects & Opportunities",
   tagline:
-    "Merancang dan membangun aplikasi web full-stack end-to-end — dari arsitektur API & database yang terstruktur hingga antarmuka modern yang cepat, aman, dan berorientasi pengguna.",
+    "Membangun aplikasi web full-stack dari rancangan antarmuka, logika API, hingga skema database. Fokus pada kode yang terstruktur, kinerja ringan, dan pengalaman pengguna yang nyaman.",
   photo: "/assets/profile-tego.jpeg",
   cv: "/assets/tego-saputra-cv.pdf",
   formspreeEndpoint: formEndpoint,
@@ -49,7 +49,7 @@ const timeline: TimelineEntry[] = [
     program: "D3 Manajemen Informatika",
     period: "2024 - Sekarang",
     description:
-      "Fokus pada pengembangan aplikasi web, sistem informasi, database, dan implementasi proyek full-stack.",
+      "Fokus pada pengembangan aplikasi web, basis data, dan rekayasa perangkat lunak full-stack melalui proyek praktis.",
   },
   {
     type: "experience",
@@ -57,7 +57,7 @@ const timeline: TimelineEntry[] = [
     program: "ABSENAPEL & CARIMAKAN",
     period: "2025 - 2026",
     description:
-      "Merancang, membangun, dan merilis aplikasi React, Express, Prisma, PostgreSQL, dan Supabase dari kebutuhan produk sampai live demo.",
+      "Membangun dan merilis proyek web full-stack mandiri dari perancangan arsitektur, integrasi database, hingga live deployment.",
   },
 ]
 
@@ -68,9 +68,9 @@ const projects: Project[] = [
     subtitle: "Smart Attendance",
     roleBadge: "Full-Stack Developer",
     impactSummary:
-      "Mengatasi absensi manual yang rawan manipulasi melalui validasi GPS & bukti selfie real-time dalam satu dashboard terpusat.",
+      "Sistem presensi apel akademik dengan kunci radius GPS dan bukti selfie langsung, lengkap dengan rekap admin real-time.",
     summary:
-      "Web absensi apel digital dengan validasi GPS, selfie sebagai bukti hadir, pengajuan izin, dan admin dashboard.",
+      "Web absensi apel digital dengan validasi radius GPS, selfie kamera langsung, perizinan, dan dashboard rekap admin.",
     note: "Demo Netlify mungkin membutuhkan beberapa detik saat cold-start.",
     screenshot: "/assets/project-absenapel.png",
     screenshotSize: { width: 1918, height: 943 },
@@ -79,34 +79,34 @@ const projects: Project[] = [
       lines: ["GPS radius check", "Selfie proof", "Admin recap"],
     },
     description:
-      "ABSENAPEL adalah sistem absensi berbasis web untuk lingkungan akademik. Mahasiswa mengisi absensi dengan validasi radius GPS dan selfie langsung sebagai bukti kehadiran, sementara admin mengelola jadwal, lokasi, dan rekap absensi secara real-time.",
+      "ABSENAPEL adalah sistem presensi apel digital berbasis web untuk lingkungan akademik. Mahasiswa melakukan absensi dengan validasi radius GPS dan foto selfie langsung, sementara admin mengelola jadwal, lokasi titik apel, serta rekap data secara real-time.",
     features: [
       "Validasi radius GPS otomatis saat absen",
-      "Selfie sebagai bukti kehadiran nyata",
+      "Selfie kamera langsung sebagai bukti kehadiran",
       "Pengajuan dan persetujuan izin mahasiswa",
-      "Dashboard admin untuk jadwal, lokasi, dan rekap",
-      "Riwayat absensi per mahasiswa",
+      "Dashboard admin untuk jadwal, lokasi titik, dan rekap",
+      "Riwayat presensi per mahasiswa",
     ],
     caseStudy: [
       {
         label: "Problem",
         value:
-          "Absensi apel manual sulit divalidasi karena lokasi, bukti kehadiran, dan rekap data tersebar.",
+          "Presensi apel manual rawan titip absen dan menyulitkan rekap kehadiran karena data lokasi dan bukti hadir tidak terpusat.",
       },
       {
         label: "Solution",
         value:
-          "Membuat alur absensi berbasis GPS dan selfie. Kedua bukti ditempatkan bersama catatan absensi agar admin dapat meninjau lokasi dan kehadiran dari dashboard yang sama.",
+          "Membangun alur absensi dengan verifikasi radius GPS dan tangkapan kamera langsung. Seluruh data tervalidasi masuk ke dashboard terpusat untuk audit admin.",
       },
       {
         label: "Role",
         value:
-          "Merancang flow produk, membangun frontend React, backend Express, auth JWT, schema Prisma, dan integrasi database.",
+          "Merancang alur produk, membangun frontend React, backend Express, otentikasi JWT, skema Prisma, dan database PostgreSQL.",
       },
       {
         label: "Impact",
         value:
-          "Proses absensi menjadi lebih mudah diaudit karena bukti lokasi, wajah, izin, dan riwayat tersedia dalam satu sistem.",
+          "Meningkatkan akurasi kehadiran mahasiswa dan memangkas waktu rekap presensi admin secara signifikan.",
       },
     ],
     tech: [
@@ -128,14 +128,14 @@ const projects: Project[] = [
       { label: "Role", value: "Solo Dev" },
     ],
     challenges: [
-      "Validasi GPS agar tidak mudah dimanipulasi pengguna",
-      "Memastikan selfie tersimpan dengan aman dan mudah diaudit admin",
-      "Sinkronisasi jadwal dan titik apel secara real-time",
+      "Mencegah manipulasi lokasi GPS dari browser atau perangkat mahasiswa",
+      "Mengoptimalkan kompresi foto selfie agar hemat bandwidth dan cepat tersimpan",
+      "Sinkronisasi status dan jadwal titik apel secara akurat dan real-time",
     ],
     learnings: [
-      "Mendesain flow produk yang konsisten dari sisi user sampai admin",
-      "Mengelola integrasi frontend, backend, dan database dalam satu codebase",
-      "Menerapkan auth JWT dengan session yang aman di Express",
+      "Merancang arsitektur aplikasi yang seimbang antara kemudahan user dan ketegasan validasi",
+      "Penerapan otentikasi JWT dan otorisasi role (mahasiswa vs admin) di Express",
+      "Manajemen skema database dan relasi data menggunakan Prisma ORM",
     ],
     live: "https://projekmandiri.netlify.app",
     repo: "https://github.com/tegokkk/ABSENAPEL",
@@ -146,9 +146,9 @@ const projects: Project[] = [
     subtitle: "Local Food Ordering",
     roleBadge: "Full-Stack Developer",
     impactSummary:
-      "Menyederhanakan pemesanan kuliner lokal lewat alur katalog, cart, checkout, dan panel admin yang terintegrasi end-to-end.",
+      "Platform pesan kuliner lokal bertema retro dengan alur belanja lengkap, mulai dari katalog menu hingga panel pesanan penjual.",
     summary:
-      "Web pemesanan makanan lokal bergaya retro dengan katalog menu, cart, checkout, riwayat, favorit, review, dan admin panel.",
+      "Web pemesanan makanan lokal bertema retro dengan fitur keranjang, checkout, riwayat pesanan, ulasan, dan panel admin.",
     note: "Demo Netlify mungkin membutuhkan beberapa detik saat cold-start.",
     screenshot: "/assets/project-carimakan.png",
     screenshotSize: { width: 1918, height: 946 },
@@ -157,34 +157,34 @@ const projects: Project[] = [
       lines: ["Menu catalog", "Cart checkout", "Admin orders"],
     },
     description:
-      "CARIMAKAN adalah platform pemesanan makanan lokal dengan tampilan retro yang unik. Pengguna dapat menjelajahi katalog menu, menambah ke cart, checkout, melihat riwayat pesanan, menyimpan favorit, memberi review, dan admin mengelola data melalui panel terpisah.",
+      "CARIMAKAN adalah platform pemesanan makanan lokal dengan konsep visual retro yang unik. Pengguna dapat menjelajahi menu, mengelola keranjang, melakukan checkout, melihat riwayat pesanan, memberi ulasan, sementara pengelola resto mengatur menu dan status pesanan via panel admin.",
     features: [
-      "Katalog dan pencarian menu dengan rekomendasi",
-      "Cart dan checkout end-to-end",
-      "Riwayat pesanan dan daftar favorit",
-      "Rating dan review menu oleh pengguna",
-      "Admin panel untuk menu, restoran, user, dan pesanan",
+      "Katalog dan pencarian menu dengan filter rekomendasi",
+      "Alur keranjang dan checkout yang mulus",
+      "Riwayat pesanan dan daftar menu favorit",
+      "Sistem rating dan ulasan dari pembeli",
+      "Panel admin untuk pengelolaan menu, kategori, dan pesanan",
     ],
     caseStudy: [
       {
         label: "Problem",
         value:
-          "Pengguna butuh pengalaman cari makanan lokal yang cepat, jelas, dan tetap punya karakter visual yang mudah diingat.",
+          "Pemesanan kuliner lokal sering kali minim identitas visual yang khas dan proses checkout yang membingungkan bagi pembeli pemula.",
       },
       {
         label: "Solution",
         value:
-          "Membangun katalog, cart, checkout, dan riwayat dalam satu flow. Panel admin dipisahkan dari antarmuka pembeli untuk membedakan kebutuhan pemesanan dan pengelolaan data.",
+          "Menghadirkan pengalaman belanja yang fun bertema retro dengan alur keranjang belanja yang intuitif, didukung panel admin untuk pembaruan menu dan status pesanan.",
       },
       {
         label: "Role",
         value:
-          "Mengembangkan UI retro, state belanja, endpoint backend, validasi data, auth, dan dashboard pengelolaan pesanan.",
+          "Mengembangkan UI/UX retro dengan React & Tailwind, mengelola client state belanja, serta membangun REST API dan skema database.",
       },
       {
         label: "Impact",
         value:
-          "Demo menampilkan alur produk food ordering end-to-end dari discovery menu sampai pengelolaan pesanan admin.",
+          "Menghadirkan prototipe e-commerce kuliner yang interaktif dan siap pakai, dari pencarian menu hingga manajemen pesanan selesai.",
       },
     ],
     tech: [
@@ -208,57 +208,127 @@ const projects: Project[] = [
       { label: "Role", value: "Solo Dev" },
     ],
     challenges: [
-      "Menjaga state belanja tetap konsisten saat user berpindah halaman",
-      "Membangun admin panel yang mudah dipakai untuk kelola pesanan",
-      "Merancang tampilan retro yang tetap cepat dan ringan di mobile",
+      "Menjaga konsistensi dan persistensi keranjang belanja saat user berpindah halaman",
+      "Mendesain tampilan retro yang unik tanpa mengorbankan kecepatan loading dan aksesibilitas mobile",
+      "Validasi skema request checkout secara menyeluruh menggunakan Zod di client dan server",
     ],
     learnings: [
-      "Membangun flow e-commerce end-to-end dari discovery sampai checkout",
-      "Mengelola validasi data dengan Zod di sisi backend dan frontend",
-      "Mendesain UI retro yang tetap accessible dan performant",
+      "Merancang alur e-commerce yang ramah pengguna dari discovery hingga order confirmation",
+      "Penerapan validasi skema runtime dengan Zod untuk mencegah payload error",
+      "Eksplorasi estetika retro modern menggunakan CSS modular dan animasi ringan",
     ],
     live: "https://carimakan2.netlify.app",
     repo: "https://github.com/tegokkk/CARIMAKAN",
   },
   {
-    slug: "photobooth", name: "POINTER PHOTOBOOTH", subtitle: "Interactive Photo Kiosk",
+    slug: "photobooth",
+    name: "POINTER PHOTOBOOTH",
+    subtitle: "Interactive Photo Kiosk",
     roleBadge: "Full-Stack Kiosk Engineer",
-    impactSummary: "Mengotomatisasi sesi foto acara dari pemilihan frame, capture kamera, komposisi canvas, hingga cetak & bagi QR instan.",
-    summary: "Aplikasi kiosk photobooth berbasis web untuk acara dan kebutuhan komersial.",
-    description: "Aplikasi photobooth berbasis browser dengan pilihan frame, sesi kamera, pratinjau foto, cetak, dan berbagi melalui QR.",
-    note: "Beberapa fitur membutuhkan kamera dan perangkat cetak yang sesuai.",
-    screenshot: "/assets/project-photobooth.png", screenshotSize: { width: 1024, height: 473 },
+    impactSummary:
+      "Aplikasi kiosk photobooth berbasis web yang mengotomatisasi sesi foto: pemilihan frame, kamera live, preview, hingga cetak dan unduh via QR.",
+    summary: "Aplikasi kiosk photobooth berbasis web untuk kebutuhan acara dan instalasi interaktif.",
+    description:
+      "POINTER PHOTOBOOTH adalah aplikasi web kiosk untuk acara dan instalasi interaktif. Pengunjung dapat memilih template frame, berfoto dengan countdown otomatis, melihat pratinjau hasil, serta mencetak atau mengunduh foto langsung ke ponsel melalui QR code.",
+    note: "Membutuhkan izin akses kamera browser untuk mencoba sesi foto.",
+    screenshot: "/assets/project-photobooth.png",
+    screenshotSize: { width: 1024, height: 473 },
     visual: { eyebrow: "Photo kiosk", lines: ["Frame selection", "Camera capture", "Print and share"] },
-    features: ["Katalog frame dan pratinjau", "Pengambilan foto dengan countdown dan retake", "Editing foto dan komposisi canvas", "Cetak serta berbagi melalui QR", "Dashboard operator dan monitoring"],
+    features: [
+      "Katalog template frame dengan live preview",
+      "Pengambilan foto dengan countdown timer dan fitur retake",
+      "Komposisi foto dan frame otomatis menggunakan HTML5 Canvas",
+      "Cetak langsung serta unduh file digital via QR code",
+      "Panel kontrol operator untuk pengaturan sesi dan cetak",
+    ],
     caseStudy: [
-      { label: "Problem", value: "Sesi photobooth perlu mudah dioperasikan oleh tamu dan operator acara." },
-      { label: "Solution", value: "Alur kiosk menghubungkan pemilihan frame, kamera, pratinjau, cetak, dan berbagi digital." },
-      { label: "Role", value: "Pengembangan aplikasi photobooth: antarmuka kiosk dan integrasi layanan backend." },
-      { label: "Outcome", value: "Repository mendokumentasikan alur frame, kamera, pratinjau, cetak, dan QR. Belum ada metrik penggunaan produksi yang dipublikasikan." },
-      { label: "Architecture", value: "Canvas digunakan untuk komposisi foto dan frame. Frontend Next.js terhubung ke API Express, Prisma, database, dan penyimpanan objek untuk layanan sesi kiosk." },
+      {
+        label: "Problem",
+        value: "Sesi foto booth konvensional di acara sering membutuhkan operator khusus dan proses transfer file foto ke tamu yang memakan waktu.",
+      },
+      {
+        label: "Solution",
+        value: "Membangun sistem kiosk swalayan (self-service) di browser yang memandu pengunjung dari pemilihan frame foto, timer capture, rendering canvas, hingga pembagian file lewat QR code.",
+      },
+      {
+        label: "Role",
+        value: "Mengembangkan antarmuka kiosk, manipulasi canvas untuk penggabungan foto & frame, serta integrasi endpoint backend.",
+      },
+      {
+        label: "Outcome",
+        value: "Berhasil mengotomatisasi seluruh alur sesi foto di acara, mempercepat pergantian tamu dan mempermudah distribusi hasil foto secara instan.",
+      },
+      {
+        label: "Architecture",
+        value: "Manipulasi HTML5 Canvas untuk komposisi frame resolusi tinggi secara client-side, dipadukan dengan Next.js dan backend Express/Prisma untuk manajemen sesi dan link QR.",
+      },
     ],
     tech: ["Next.js", "React", "TypeScript", "Express", "Prisma ORM", "PostgreSQL"],
-    challenges: ["Menghubungkan pilihan frame, izin kamera, retake, dan hasil akhir dalam satu sesi kiosk.", "Memisahkan pratinjau browser dari kebutuhan kamera dan printer pada perangkat acara."], learnings: [], live: "https://photobooth-frontend-three.vercel.app/", repo: "https://github.com/tegokkk/PHOTOBOOTH1",
+    challenges: [
+      "Menangani izin kamera browser dan penyesuaian rasio resolusi foto berbagai webcam",
+      "Mengoptimalkan proses rendering canvas agar penggabungan frame foto tetap mulus tanpa lag",
+    ],
+    learnings: [
+      "Teknik manipulasi image data dan rendering multi-layer di HTML5 Canvas",
+      "Pengelolaan state mesin interaktif untuk alur kiosk self-service",
+    ],
+    live: "https://photobooth-frontend-three.vercel.app/",
+    repo: "https://github.com/tegokkk/PHOTOBOOTH1",
   },
   {
-    slug: "decormoment", name: "DECORMOMENT.BDL", subtitle: "Acrylic Board Rental",
+    slug: "decormoment",
+    name: "DECORMOMENT.BDL",
+    subtitle: "Acrylic Board Rental",
     roleBadge: "Frontend & Web Engineer",
-    impactSummary: "Mempercepat konversi pemesanan sewa papan akrilik dengan katalog interaktif responsif yang terhubung langsung ke WhatsApp.",
-    summary: "Situs katalog dan pemesanan papan ucapan akrilik di Bandar Lampung.",
-    description: "Landing page bisnis papan ucapan akrilik yang menyajikan katalog produk, informasi layanan, dan alur pemesanan melalui WhatsApp.",
-    note: "Pemesanan diteruskan ke WhatsApp bisnis.",
-    screenshot: "/assets/project-decormoment.png", screenshotSize: { width: 1024, height: 510 },
+    impactSummary:
+      "Katalog interaktif sewa papan akrilik di Bandar Lampung yang langsung terhubung ke chat WhatsApp dengan format pesanan otomatis.",
+    summary: "Website katalog dan pemesanan sewa papan ucapan akrilik di Bandar Lampung.",
+    description:
+      "DECORMOMENT.BDL adalah web katalog untuk bisnis penyewaan papan ucapan akrilik. Pengunjung dapat meninjau galeri variasi papan, pricelist, testimoni, dan melakukan reservasi langsung melalui pesan WhatsApp yang sudah diformat rapi.",
+    note: "Pemesanan diteruskan langsung ke WhatsApp admin bisnis.",
+    screenshot: "/assets/project-decormoment.png",
+    screenshotSize: { width: 1024, height: 510 },
     visual: { eyebrow: "Product catalog", lines: ["Product gallery", "Responsive layout", "WhatsApp inquiry"] },
-    features: ["Katalog produk dengan carousel", "Pemesanan melalui WhatsApp", "Informasi layanan dan FAQ", "Tampilan responsif untuk mobile", "Static export dan metadata SEO"],
+    features: [
+      "Galeri katalog papan ucapan dengan carousel responsif",
+      "Generator pesan otomatis langsung ke WhatsApp admin",
+      "Pricelist transparan, informasi layanan, dan FAQ lengkap",
+      "Navigasi cepat dan optimal di layar smartphone",
+      "Optimasi SEO lokal untuk kata kunci sewa papan akrilik Bandar Lampung",
+    ],
     caseStudy: [
-      { label: "Problem", value: "Pelanggan membutuhkan cara yang jelas untuk melihat pilihan papan dan menghubungi penyedia." },
-      { label: "Solution", value: "Landing page menyatukan katalog visual, informasi produk, dan tautan pemesanan WhatsApp." },
-      { label: "Role", value: "Pengembangan website katalog dan integrasi tautan pemesanan WhatsApp." },
-      { label: "Outcome", value: "Website menyatukan katalog, FAQ, dan akses WhatsApp. Belum ada data konversi pemesanan yang dipublikasikan." },
-      { label: "Implementation", value: "Next.js menggunakan static export untuk halaman katalog. CSS Modules dan token desain menjaga konsistensi tampilan; WhatsApp menjadi jalur pemesanan langsung tanpa checkout terpisah." },
+      {
+        label: "Problem",
+        value: "Calon pelanggan sering kesulitan melihat detail model papan akrilik yang tersedia dan format chat pemesanan di media sosial sering kali tidak lengkap.",
+      },
+      {
+        label: "Solution",
+        value: "Menyediakan katalog visual responsif berbasis web dengan tombol reservasi yang langsung men-generate detail produk dan tanggal sewa ke WhatsApp pemilik bisnis.",
+      },
+      {
+        label: "Role",
+        value: "Mendesain dan mengembangkan website katalog responsif, optimasi performa loading gambar, serta integrasi generator pesanan WhatsApp.",
+      },
+      {
+        label: "Outcome",
+        value: "Memudahkan calon penyewa melihat referensi produk secara mandiri dan mempercepat alur konsultasi pemesanan tanpa bolak-balik menanyakan katalog.",
+      },
+      {
+        label: "Implementation",
+        value: "Dibangun dengan Next.js static export dan CSS modular untuk memastikan loading instan di mobile, dengan metadata SEO untuk pencarian lokal di Bandar Lampung.",
+      },
     ],
     tech: ["Next.js", "React", "CSS Modules", "Lenis"],
-    challenges: ["Menjaga katalog mudah dipindai di mobile dan jalur pemesanan WhatsApp mudah ditemukan."], learnings: [], live: "https://decormoment-bdl.vercel.app/", repo: "https://github.com/tegokkk/DECORMOMENT.BDL",
+    challenges: [
+      "Menjaga bobot gambar katalog tetap tajam namun sangat ringan saat diakses via koneksi mobile",
+      "Membuat alur konsultasi pemesanan via WhatsApp terasa praktis dan bebas friksi bagi pengguna",
+    ],
+    learnings: [
+      "Optimasi aset visual responsif untuk web bisnis lokal berbasis mobile",
+      "Penerapan struktur meta tag SEO untuk visibilitas penelusuran daerah tertentu",
+    ],
+    live: "https://decormoment-bdl.vercel.app/",
+    repo: "https://github.com/tegokkk/DECORMOMENT.BDL",
   },
 ]
 
@@ -326,8 +396,10 @@ const tabs: TabEntry[] = [
 
 const navItems: NavItem[] = [
   { id: "home", label: "Portfolio" },
-  { id: "portfolio", label: "Projects" },
   { id: "about", label: "About" },
+  { id: "portfolio", label: "Projects" },
+  { id: "certificates", label: "Certificates" },
+  { id: "tech", label: "Tech Stack" },
   { id: "contact", label: "Contact" },
 ]
 

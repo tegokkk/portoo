@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "motion/react"
-import { ArrowRight, Download, Mail, Sparkles } from "lucide-react"
+import { ArrowRight, Download, Mail } from "lucide-react"
 import { profile, projects } from "@/data/portfolio"
 import type { Project } from "@/data/types"
 import { staggerContainer, staggerItem } from "@/lib/motion"
@@ -76,11 +76,6 @@ export function HeroSection({ onOpenProject }: HeroSectionProps) {
         <motion.div className="hero-cover" variants={staggerItem}>
           <div className="hero-cover-topline">
             <div className="hero-topline-left">
-              <Sparkles className="hero-symbol" size={40} strokeWidth={1.6} aria-hidden="true" />
-              <div className="hero-status-badge" role="status" aria-label={profile.status}>
-                <span className="status-pulse-dot" aria-hidden="true" />
-                <span>Available for Projects</span>
-              </div>
             </div>
             <div className="hero-volume">
               <span>PROJECT</span>
@@ -93,7 +88,7 @@ export function HeroSection({ onOpenProject }: HeroSectionProps) {
             <p className="hero-role-eyebrow">{profile.role} / Indonesia</p>
             <h1>{profile.name}</h1>
             <p className="hero-value-headline" lang="id">
-              Membangun Aplikasi Web Full-Stack Skalabel, Aman &amp; Berorientasi Performa
+              Membangun aplikasi web full-stack yang rapi, cepat, dan siap pakai
             </p>
           </div>
 

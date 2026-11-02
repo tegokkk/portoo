@@ -49,7 +49,7 @@ export function ContactSection() {
 
     if (!payload.name || !payload.message) {
       setFallbackHref("")
-      setToast("Enter your name and project details, using more than spaces.")
+      setToast("Please enter your name and project details.")
       return
     }
     const preparedEmail = `mailto:${profile.email}?subject=${encodeURIComponent(
@@ -58,7 +58,7 @@ export function ContactSection() {
     if (!configured) {
       setFallbackHref(preparedEmail)
       window.location.href = preparedEmail
-      setToast("Continue in your email app to send the message. If it does not open, use the email link above.")
+      setToast("Continue in your email app to send the message. If it doesn't open, use the direct email link above.")
       return
     }
 
@@ -74,10 +74,10 @@ export function ContactSection() {
       })
       if (!response.ok) throw new Error("Form request failed")
       form.reset()
-      setToast("Message sent. I’ll reply by email.")
+      setToast("Message sent. I’ll reply to your email soon!")
     } catch {
       setFallbackHref(preparedEmail)
-      setToast("Message not sent. Try again or email me directly.")
+      setToast("Message not sent. Please try again or email me directly.")
     } finally {
       setSubmitting(false)
     }
@@ -91,7 +91,7 @@ export function ContactSection() {
             <p className="section-kicker">Contact / Collaboration</p>
             <h2>Work<br />with me.</h2>
             <p className="contact-hero-copy" lang="id">
-              Ceritakan kebutuhan aplikasi, website, atau ide produk Anda. Mari diskusikan cara mewujudkannya.
+              Punya ide proyek, kebutuhan website untuk bisnis, atau ingin berdiskusi seputar peluang kerja sama? Pintu diskusi selalu terbuka.
             </p>
           </div>
           <aside className="contact-card">
@@ -173,13 +173,13 @@ export function ContactSection() {
           <aside className="contact-side-info">
             <div className="status-card">
               <div className="status-card-heading"><span /> <h3>Current status</h3></div>
-              <p>Currently <strong>open</strong> for freelance projects and technical consultation.</p>
-              <div className="status-tags"><span>Frontend</span><span>Design systems</span></div>
+              <p>Saat ini <strong>terbuka</strong> untuk proyek freelance, magang, maupun posisi full-time.</p>
+              <div className="status-tags"><span>Full-Stack</span><span>Frontend &amp; API</span></div>
             </div>
             <div className="operating-base">
               <span>Operating base</span>
               <strong>Indonesia,<br />GMT+7</strong>
-              <small>Available for remote collaboration</small>
+              <small>Terbuka untuk kolaborasi remote &amp; on-site</small>
             </div>
           </aside>
         </div>

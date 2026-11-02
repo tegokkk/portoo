@@ -1,0 +1,65 @@
+/* Only the supplied gallery is scanned. No global Tailwind preflight reset. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" source(none);
+@source "../components/ui/picture-rail-gallery.tsx";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #f9f7f2;
+  --color-foreground: #222222;
+  --color-card: #f0eee9;
+  --color-card-foreground: #222222;
+  --color-muted: #e9e6df;
+  --color-muted-foreground: #5f6470;
+  --color-border: #d1cec7;
+  --color-ring: #0055aa;
+  --color-chart-2: #0055aa;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* Local reset supplies the assumptions made by the original component. */
+:where(.picture-rail, .picture-rail-detail) :where(*, *::before, *::after) {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
+:where(.picture-rail, .picture-rail-detail) :where(button) { background: transparent; }
+:where(.picture-rail, .picture-rail-detail) :where(ul) { list-style: none; }
+.picture-rail { font-family: var(--body); }
+.picture-rail [data-frame]:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; }
+.picture-rail [aria-live] { max-width: 65ch; min-height: 76px; }
+.picture-rail [data-stage] { margin-top: 24px; }
+/* Give small carousel indicators a full touch target without changing their dots. */
+.picture-rail [aria-current] { position: relative; margin-block: 16px; }
+.picture-rail [aria-current]::after { content: ""; position: absolute; inset: -16px -8px; }
+
+.picture-rail-detail { z-index: 140; padding: 20px; font-family: var(--body); }
+.picture-rail-backdrop { background: rgb(18 26 36 / 62%); backdrop-filter: blur(5px); }
+.picture-rail-panel {
+  position: relative;
+  width: min(740px, 100%);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  padding: 64px 28px 32px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.picture-rail-panel > button { top: 14px; right: 14px; min-height: 36px; }
+.picture-rail-panel[data-transferring] { overflow: visible; }
+.picture-rail-detail-grid { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); align-items: center; justify-items: center; gap: 28px; }
+.picture-rail-detail-grid > div { min-width: 0; }
+.picture-rail-detail h3 { color: var(--blue); font-size: clamp(20px, 2.1vw, 26px); line-height: 1.2; overflow-wrap: anywhere; }
+.picture-rail-detail li { overflow-wrap: anywhere; max-width: 100%; }
+.picture-rail-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.picture-rail-actions a { font-size: 11px; min-height: 40px; }
+.picture-rail-detail [data-back-label] { max-height: 66%; overflow-y: auto; }
+
+@media (max-width: 767px) {
+  .picture-rail-detail { padding: 16px; }
+  .picture-rail-panel { width: min(440px, 100%); max-height: calc(100dvh - 32px); padding: 60px 20px 24px; }
+  .picture-rail-detail-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .picture-rail-actions { justify-content: center; }
+}

@@ -10,9 +10,20 @@ export function Header() {
   const shouldReduce = useReducedMotion()
   const navRef = useRef<HTMLElement>(null)
   const buttonRef = useRef<HTMLButtonElement>(null)
+  const pendingNavigation = useRef<{ id: string; until: number } | null>(null)
 
   useEffect(() => {
     const update = () => {
+      const pending = pendingNavigation.current
+      if (pending) {
+        const destination = document.getElementById(pending.id)
+        const targetTop = pending.id === "home" ? 0 : 96
+        if (destination && Math.abs(destination.getBoundingClientRect().top - targetTop) > 12 && performance.now() < pending.until) {
+          setActive(pending.id)
+          return
+        }
+        pendingNavigation.current = null
+      }
       const sections = navItems.map((item) => document.getElementById(item.id)).filter((el): el is HTMLElement => Boolean(el)).sort((a, b) => a.getBoundingClientRect().top - b.getBoundingClientRect().top)
       setActive(sections.filter((el) => el.getBoundingClientRect().top <= window.innerHeight * 0.35).slice(-1)[0]?.id ?? "")
     }
@@ -24,6 +35,8 @@ export function Header() {
   }, [])
 
   const go = (id: string) => {
+    pendingNavigation.current = { id, until: performance.now() + 2200 }
+    setActive(id)
     lockScroll(false)
     scrollTo(id)
     setOpen(false)

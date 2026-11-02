@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react"
 import { ArrowUp } from "lucide-react"
 import { FlickeringGrid } from "@/components/background/FlickeringGrid"
 import { Header } from "@/components/layout/header"
-import { CertificateModal, CvModal, ProjectModal } from "@/components/modals/portfolio-modals"
+import { CvModal, ProjectModal } from "@/components/modals/portfolio-modals"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { AboutSection } from "@/components/sections/about-section"
 import { CertificateSection } from "@/components/sections/certificate-section"
@@ -12,20 +12,19 @@ import { GlyphSection } from "@/components/sections/glyph-section"
 import { ProjectsSection } from "@/components/sections/projects-section"
 import { TechSection } from "@/components/sections/tech-section"
 import { profile } from "@/data/portfolio"
-import type { Certificate, Project } from "@/data/types"
+import type { Project } from "@/data/types"
 import { useLenis } from "@/hooks/use-lenis"
 import { scrollTop, setLenis } from "@/lib/scroll"
 
 function App() {
   const year = useMemo(() => new Date().getFullYear(), [])
   const [activeProject, setActiveProject] = useState<Project | null>(null)
-  const [activeCertificate, setActiveCertificate] = useState<Certificate | null>(null)
+  const [certificateOpen, setCertificateOpen] = useState(false)
   const [showCv, setShowCv] = useState(false)
   const [showTop, setShowTop] = useState(false)
   const closeProject = useCallback(() => setActiveProject(null), [])
-  const closeCertificate = useCallback(() => setActiveCertificate(null), [])
   const closeCv = useCallback(() => setShowCv(false), [])
-  const hasModal = Boolean(activeProject || activeCertificate || showCv)
+  const hasModal = Boolean(activeProject || certificateOpen || showCv)
 
   const { lenisRef } = useLenis()
 
@@ -71,7 +70,7 @@ function App() {
         </GlyphSection>
         <AboutSection onOpenCv={() => setShowCv(true)} />
         <ProjectsSection onOpenProject={setActiveProject} />
-        <CertificateSection onOpenCertificate={setActiveCertificate} />
+        <CertificateSection onOpenChange={setCertificateOpen} />
         <TechSection />
         <ContactSection />
       </main>
@@ -88,7 +87,6 @@ function App() {
       {activeProject ? (
         <ProjectModal project={activeProject} onClose={closeProject} />
       ) : null}
-      {activeCertificate ? <CertificateModal certificate={activeCertificate} onClose={closeCertificate} /> : null}
       {showCv ? <CvModal onClose={closeCv} /> : null}
     </>
   )

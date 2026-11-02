@@ -60,6 +60,8 @@
 }
 
 .about-profile {
+  position: relative;
+  z-index: 4;
   grid-column: span 4;
   min-width: 0;
 }
@@ -258,7 +260,7 @@
 .lanyard-badge {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   user-select: none;
 }
 .lanyard-card { position: absolute; top: 0; left: 0; }

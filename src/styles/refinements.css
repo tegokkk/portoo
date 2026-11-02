@@ -7,7 +7,7 @@ section { scroll-margin-top: 0; }
 .contact-form label, .about-copy-heading, .about-details > div > span,
 .about-folder-label, .about-details small, .focus-badges b, .project-deck-tags span,
 .tech-icon, .status-tags span, .form-status, .form-toast, .certificate-gallery-note,
-.certificate-gallery-meta, .projects-footer-note, .stack-card-title span { font-size: 12px; line-height: 1.5; }
+.projects-footer-note, .stack-card-title span { font-size: 12px; line-height: 1.5; }
 .site-header :focus-visible, .hero-section :focus-visible, .about-folder :focus-visible { outline-color: var(--folder-cyan); }
 .nav-link[aria-current]::after { transform: scaleX(1); }
 .nav-mobile-overlay { height: calc(100dvh - var(--header-height)); }
@@ -73,14 +73,6 @@ body.menu-open { overflow: hidden; }
 .project-deck .cd-count { letter-spacing: 0; }
 .certificate-gallery-heading { text-align: left; }
 .certificate-gallery-heading > p:last-child { margin: 0; max-width: 60ch; }
-.certificate-gallery-controls { align-items: center; }
-.certificate-gallery-controls span { margin-right: auto; font: 12px/1.5 var(--mono); }
-.certificate-gallery-controls button { flex-shrink: 0; }
-.certificate-gallery-scroll { padding: 24px 6px; overscroll-behavior-x: contain; }
-.certificate-gallery-group { padding: 0 6px 0 0; gap: 20px; align-items: stretch; }
-.certificate-gallery-card, .certificate-gallery-card + .certificate-gallery-card, .certificate-gallery-card:nth-child(even) { margin: 0; }
-.certificate-gallery-card { flex-basis: clamp(230px,23vw,300px); padding: 14px; }
-.certificate-gallery-card strong { font-size: 17px; line-height: 1.4; }
 .core-stack { display: grid; gap: 10px; padding-bottom: 24px; }
 .core-stack span { font: 12px/1.5 var(--mono); text-transform: uppercase; color: var(--muted); }
 .core-stack strong { font: 700 clamp(18px,2.3vw,28px)/1.4 var(--body); color: var(--blue-deep); }
@@ -141,7 +133,6 @@ body.menu-open { overflow: hidden; }
   .project-deck .cd-count { display: none; }
   .project-picker button { font-size: 11px; gap: 6px; padding: 10px 8px; }
   .projects-footer-note { flex-wrap: wrap; }
-  .certificate-gallery-scroll { margin-inline: 0; }
   .certificate-gallery-heading h2 { font-size: clamp(2rem,10vw,3.5rem); }
   .stack-card { padding: 18px; }
   .stack-card-title span { font-size: 11px; }
@@ -164,12 +155,13 @@ body.menu-open { overflow: hidden; }
     border: 1px solid rgba(225, 246, 248, 0.22);
     backdrop-filter: blur(14px);
     box-shadow: 0 8px 28px -8px rgba(0, 12, 30, 0.45);
-    gap: 6px;
+    gap: clamp(2px, 0.4vw, 6px);
   }
 
   .nav-desktop .nav-link {
     min-height: 36px;
-    padding: 0 16px;
+    padding: 0 clamp(9px, 1.1vw, 16px);
+    white-space: nowrap;
     border-radius: 9999px;
     transition: background-color 220ms ease, color 220ms ease;
   }
@@ -178,15 +170,19 @@ body.menu-open { overflow: hidden; }
     display: none;
   }
 
-  .nav-desktop .nav-link:hover {
-    background: rgba(225, 246, 248, 0.12);
-  }
-
+  .nav-desktop .nav-link:hover,
+  .nav-desktop .nav-link:focus-visible,
   .nav-desktop .nav-link[aria-current="location"] {
     background: var(--folder-cyan-pale);
     color: var(--blue-deep);
     font-weight: 700;
   }
+}
+.nav-mobile-link:hover,
+.nav-mobile-link:focus-visible,
+.nav-mobile-link[aria-current="location"] {
+  background: var(--folder-cyan-pale);
+  color: var(--blue-deep);
 }
 
 /* 2. Hero Status Badge & Value Proposition */

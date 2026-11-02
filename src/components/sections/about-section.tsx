@@ -54,9 +54,9 @@ export function AboutSection({ onOpenCv }: AboutSectionProps) {
                 </div>}
                 back={<div className="id-face id-face-back" aria-hidden="true">
                   <div className="id-card-top"><span>TEGO.DEV</span></div>
-                  <span className="id-card-kicker">Focus areas</span>
-                  <strong>Build with<br />purpose.</strong>
-                  <p lang="id">Frontend, backend, dan sistem web yang jelas dan mudah digunakan.</p>
+                  <span className="id-card-kicker">Core ethos</span>
+                  <strong>Clean logic,<br />solid UI.</strong>
+                  <p lang="id">Menghubungkan arsitektur data yang kokoh dengan antarmuka yang nyaman digunakan.</p>
                   <div className="id-card-tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div>
                   <div className="id-card-footer"><span>INDONESIA / GMT+7</span><span>2026</span></div>
                 </div>}
@@ -68,7 +68,7 @@ export function AboutSection({ onOpenCv }: AboutSectionProps) {
                 <span>Profile overview</span>
               </div>
               <p lang="id">
-                Saya mengembangkan aplikasi dari antarmuka sampai API dan database. Fokus saya: alur yang mudah dipahami, tampilan responsif, dan pengelolaan data yang terstruktur.
+                Saya adalah mahasiswa Manajemen Informatika yang berfokus pada pengembangan web full-stack. Saya menyukai proses membangun produk dari nol—mulai dari merancang antarmuka yang bersih di React, menyusun logika API di Express, hingga mengelola relasi data di PostgreSQL.
               </p>
 
               <div className="about-details">
