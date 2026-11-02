@@ -109,8 +109,8 @@ try {
   await section(page,'certificates')
   const gallery=page.locator('[data-slot="picture-rail-gallery"]')
   const cards=gallery.locator('[data-frame]')
-  assert.equal(await cards.count(),7)
-  for(let i=0;i<7;i++) {
+  assert.equal(await cards.count(),10)
+  for(let i=0;i<10;i++) {
     const trigger=cards.nth(i)
     await trigger.focus(); await page.keyboard.press('Enter')
     const pdf=await page.getByRole('link',{name:'Open PDF',exact:true}).getAttribute('href')
@@ -122,7 +122,7 @@ try {
   await cards.first().focus(); await page.keyboard.press('Home'); await page.keyboard.press('ArrowRight')
   assert.equal(await gallery.getAttribute('data-active'),'1','Rail keyboard navigation')
   await page.keyboard.press('End'); await page.keyboard.press('ArrowRight')
-  assert.equal(await gallery.getAttribute('data-active'),'6','Finite certificate rail')
+  assert.equal(await gallery.getAttribute('data-active'),'9','Finite certificate rail')
 
   await section(page,'contact')
   await page.getByRole('button',{name:'Send message',exact:true}).click()
