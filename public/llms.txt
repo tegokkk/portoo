@@ -1,13 +1,13 @@
-﻿# Tego Saputra Portfolio
+# Tego Saputra Portfolio
 
 Portfolio website for Tego Saputra, a full-stack web developer focused on React, Vite, Tailwind CSS, Node.js, Prisma, PostgreSQL, and Supabase projects.
 
 ## Important Links
 
-- [Home](https://tego-saputra.vercel.app/)
-- [Projects](https://tego-saputra.vercel.app/#portfolio)
-- [Contact](https://tego-saputra.vercel.app/#contact)
-- [CV](https://tego-saputra.vercel.app/assets/tego-saputra-cv.pdf)
+- [Home](https://portoo-hazel.vercel.app/)
+- [Projects](https://portoo-hazel.vercel.app/#portfolio)
+- [Contact](https://portoo-hazel.vercel.app/#contact)
+- [CV](https://portoo-hazel.vercel.app/assets/tego-saputra-cv.pdf)
 - [GitHub](https://github.com/tegokkk)
 - [LinkedIn](https://www.linkedin.com/in/tego-saputra-893782383/)
 

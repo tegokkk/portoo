@@ -33,7 +33,7 @@ async function closeDialog(page, trigger) {
 }
 try {
   await until(async()=>{try {return (await fetch(baseUrl)).ok} catch {return false}}, 'Dev server unavailable',30000)
-  browser = await chromium.launch()
+  browser = await chromium.launch().catch(() => chromium.launch({ channel: 'chrome' }))
   const context = await browser.newContext({ viewport:{width:1440,height:900}, reducedMotion:'reduce' })
   let postCount = 0
   let formMode = 'success'

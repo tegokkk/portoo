@@ -1,7 +1,7 @@
 import type { FormEvent } from "react"
 import { useState } from "react"
 import { motion, useReducedMotion } from "motion/react"
-import { Check, Code2, Globe2, Mail, Send } from "lucide-react"
+import { Check, Code2, Copy, Globe2, Mail, Send } from "lucide-react"
 import { SectionReveal } from "@/components/section-reveal"
 import { profile, socials } from "@/data/portfolio"
 import { staggerContainer, staggerItem } from "@/lib/motion"
@@ -11,8 +11,28 @@ export function ContactSection() {
   const [toast, setToast] = useState("")
   const [fallbackHref, setFallbackHref] = useState("")
   const [submitting, setSubmitting] = useState(false)
+  const [copied, setCopied] = useState(false)
   const configured = Boolean(profile.formspreeEndpoint)
   const contactSocials = socials.filter((social) => social.label.toLowerCase() !== "email")
+
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2600)
+    } catch {
+      const textarea = document.createElement("textarea")
+      textarea.value = profile.email
+      textarea.style.position = "fixed"
+      textarea.style.opacity = "0"
+      document.body.appendChild(textarea)
+      textarea.select()
+      document.execCommand("copy")
+      document.body.removeChild(textarea)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 2600)
+    }
+  }
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -79,7 +99,18 @@ export function ContactSection() {
               <span>Contact me</span>
               <Check size={18} />
             </div>
-            <a href={`mailto:${profile.email}`}><Mail size={17} /> {profile.email}</a>
+            <div className="contact-email-row">
+              <a href={`mailto:${profile.email}`}><Mail size={17} /> {profile.email}</a>
+              <button
+                type="button"
+                className="copy-email-button"
+                onClick={copyEmail}
+                aria-label="Copy email address"
+              >
+                {copied ? <Check size={14} aria-hidden="true" /> : <Copy size={14} aria-hidden="true" />}
+                <span>{copied ? "Email berhasil disalin!" : "Salin Email"}</span>
+              </button>
+            </div>
             <a href={contactSocials[0]?.href ?? "#"} target="_blank" rel="noopener noreferrer"><Code2 size={17} /> GitHub / tegokkk</a>
             <a href={contactSocials[1]?.href ?? "#"} target="_blank" rel="noopener noreferrer"><Globe2 size={17} /> LinkedIn / Tego</a>
           </aside>

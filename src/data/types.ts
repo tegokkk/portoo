@@ -51,6 +51,8 @@ export interface Project {
   slug: string
   name: string
   subtitle: string
+  roleBadge?: string
+  impactSummary?: string
   summary: string
   note: string
   screenshot: string

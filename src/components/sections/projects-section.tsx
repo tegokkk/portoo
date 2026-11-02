@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Code2, ExternalLink, FileText } from "lucide-react"
+import { ArrowUpRight, Code2, FileText } from "lucide-react"
 import { SectionReveal } from "@/components/section-reveal"
 import CardDeckCarousel from "@/components/ui/card-deck-carousel"
 import { projects } from "@/data/portfolio"
@@ -32,15 +32,18 @@ export function ProjectsSection({ onOpenProject }: ProjectsSectionProps) {
         </div>
         <div className="project-deck-layout">
           <div className="project-deck-copy">
-            <span className="project-index">Project // {String(selected + 1).padStart(2, "0")}</span>
+            <div className="project-meta-row">
+              <span className="project-index">Project // {String(selected + 1).padStart(2, "0")}</span>
+              {project.roleBadge ? <span className="project-role-badge">{project.roleBadge}</span> : null}
+            </div>
             <h3>{project.name}</h3>
             <strong>{project.subtitle}</strong>
-            <p lang="id">{project.description}</p>
-            <div className="project-deck-tags">{project.tech.slice(0, 4).map((tech) => <span key={tech}>{tech}</span>)}</div>
+            <p lang="id">{project.impactSummary ?? project.description}</p>
+            <div className="project-deck-tags">{project.tech.slice(0, 5).map((tech) => <span key={tech}>{tech}</span>)}</div>
             <div className="project-links">
               <button className="primary-button" type="button" onClick={() => onOpenProject(project)}><FileText size={16} /> Case Study</button>
-              <a className="secondary-button" href={project.live} target="_blank" rel="noopener noreferrer"><ExternalLink size={16} /> Live</a>
-              <a className="secondary-button" href={project.repo} target="_blank" rel="noopener noreferrer"><Code2 size={16} /> Repo</a>
+              <a className="secondary-button" href={project.live} target="_blank" rel="noopener noreferrer">Live Demo <ArrowUpRight size={16} aria-hidden="true" /></a>
+              <a className="secondary-button" href={project.repo} target="_blank" rel="noopener noreferrer"><Code2 size={16} /> Source Code</a>
             </div>
           </div>
           <div className="project-deck-preview"><CardDeckCarousel className="project-deck" slides={slides} activeIndex={selected} onChange={setSelected} height="460px" cardWidth="min(100%, 600px)" aspect="2 / 1" scatter={5} autoplay={0} background="var(--paper-soft)" ink="var(--ink)" ariaLabel="Selected projects. Use arrow keys or drag to change project." /><p className="deck-hint">Drag a card or use the arrows to explore.</p></div>

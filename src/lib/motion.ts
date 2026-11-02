@@ -3,11 +3,11 @@ import type { Variants } from "motion/react"
 const smoothEase = [0.25, 0.46, 0.45, 0.94] as const
 
 export const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: smoothEase },
+    transition: { duration: 0.36, ease: smoothEase },
   },
 } satisfies Variants
 
@@ -15,7 +15,7 @@ export const fadeIn = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 0.32, ease: "easeOut" },
   },
 } satisfies Variants
 
@@ -23,18 +23,18 @@ export const staggerContainer = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1,
+      staggerChildren: 0.06,
+      delayChildren: 0.05,
     },
   },
 } satisfies Variants
 
 export const staggerItem = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.35, ease: "easeOut" },
   },
 } satisfies Variants
 

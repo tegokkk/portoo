@@ -8,7 +8,7 @@ async function wait(check,label){for(let i=0;i<100;i++){if(await check())return;
 async function scroll(page,id){await page.locator('#'+id).evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));await delay(1000)}
 try {
  await wait(async()=>{try{return(await fetch('http://127.0.0.1:5175')).ok}catch{return false}},'server')
- browser=await chromium.launch()
+ browser=await chromium.launch().catch(()=>chromium.launch({channel:'chrome'}))
  const page=await browser.newPage({viewport:{width:1280,height:600}})
  const errors=[];page.on('pageerror',e=>errors.push(e.message))
  await page.goto('http://127.0.0.1:5175');await page.locator('[data-gp-ready]').waitFor();await delay(1000)

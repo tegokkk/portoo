@@ -21,14 +21,23 @@ export function TechSection() {
         </div>
         <div className="core-stack" aria-label="Core technologies"><span>Core technologies</span><strong>React / Next.js / Node.js / PostgreSQL</strong></div>
         <motion.div
-          className="stack-grid"
+          className="stack-grid bento-stack-grid"
           initial={reduced ? false : "hidden"}
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={staggerContainer}
         >
-          {techStack.map((group) => (
-            <motion.article key={group.category} className="stack-card" variants={staggerItem}>
+          {techStack.map((group, index) => (
+            <motion.article
+              key={group.category}
+              className={`stack-card bento-card bento-card--${index + 1}`}
+              variants={staggerItem}
+              onPointerMove={(event) => {
+                const rect = event.currentTarget.getBoundingClientRect()
+                event.currentTarget.style.setProperty("--mouse-x", `${event.clientX - rect.left}px`)
+                event.currentTarget.style.setProperty("--mouse-y", `${event.clientY - rect.top}px`)
+              }}
+            >
               <div className="stack-card-title">
                 <group.icon size={20} />
                 <h3>{group.category}</h3>

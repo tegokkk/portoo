@@ -17,11 +17,11 @@ const formEndpoint = /^https:\/\/formspree\.io\/f\/[A-Za-z0-9_-]+$/.test(configu
 
 const profile: Profile = {
   name: "Tego Saputra",
-  role: "Full-Stack Web Developer",
+  role: "Full-Stack Web Developer & Software Engineer",
   email: "tegosaputra02@gmail.com",
-  status: "Open for internship / freelance work",
+  status: "Available for Projects & Opportunities",
   tagline:
-    "Saya membangun aplikasi web full-stack yang rapi, responsif, dan punya alur pengguna yang jelas.",
+    "Merancang dan membangun aplikasi web full-stack end-to-end — dari arsitektur API & database yang terstruktur hingga antarmuka modern yang cepat, aman, dan berorientasi pengguna.",
   photo: "/assets/profile-tego.jpeg",
   cv: "/assets/tego-saputra-cv.pdf",
   formspreeEndpoint: formEndpoint,
@@ -66,6 +66,9 @@ const projects: Project[] = [
     slug: "absenapel",
     name: "ABSENAPEL",
     subtitle: "Smart Attendance",
+    roleBadge: "Full-Stack Developer",
+    impactSummary:
+      "Mengatasi absensi manual yang rawan manipulasi melalui validasi GPS & bukti selfie real-time dalam satu dashboard terpusat.",
     summary:
       "Web absensi apel digital dengan validasi GPS, selfie sebagai bukti hadir, pengajuan izin, dan admin dashboard.",
     note: "Demo Netlify mungkin membutuhkan beberapa detik saat cold-start.",
@@ -141,6 +144,9 @@ const projects: Project[] = [
     slug: "carimakan",
     name: "CARIMAKAN",
     subtitle: "Local Food Ordering",
+    roleBadge: "Full-Stack Developer",
+    impactSummary:
+      "Menyederhanakan pemesanan kuliner lokal lewat alur katalog, cart, checkout, dan panel admin yang terintegrasi end-to-end.",
     summary:
       "Web pemesanan makanan lokal bergaya retro dengan katalog menu, cart, checkout, riwayat, favorit, review, dan admin panel.",
     note: "Demo Netlify mungkin membutuhkan beberapa detik saat cold-start.",
@@ -216,6 +222,8 @@ const projects: Project[] = [
   },
   {
     slug: "photobooth", name: "POINTER PHOTOBOOTH", subtitle: "Interactive Photo Kiosk",
+    roleBadge: "Full-Stack Kiosk Engineer",
+    impactSummary: "Mengotomatisasi sesi foto acara dari pemilihan frame, capture kamera, komposisi canvas, hingga cetak & bagi QR instan.",
     summary: "Aplikasi kiosk photobooth berbasis web untuk acara dan kebutuhan komersial.",
     description: "Aplikasi photobooth berbasis browser dengan pilihan frame, sesi kamera, pratinjau foto, cetak, dan berbagi melalui QR.",
     note: "Beberapa fitur membutuhkan kamera dan perangkat cetak yang sesuai.",
@@ -234,6 +242,8 @@ const projects: Project[] = [
   },
   {
     slug: "decormoment", name: "DECORMOMENT.BDL", subtitle: "Acrylic Board Rental",
+    roleBadge: "Frontend & Web Engineer",
+    impactSummary: "Mempercepat konversi pemesanan sewa papan akrilik dengan katalog interaktif responsif yang terhubung langsung ke WhatsApp.",
     summary: "Situs katalog dan pemesanan papan ucapan akrilik di Bandar Lampung.",
     description: "Landing page bisnis papan ucapan akrilik yang menyajikan katalog produk, informasi layanan, dan alur pemesanan melalui WhatsApp.",
     note: "Pemesanan diteruskan ke WhatsApp bisnis.",

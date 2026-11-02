@@ -151,3 +151,252 @@ body.menu-open { overflow: hidden; }
   .modal { padding: 20px 16px; }
   .scroll-top { position: static; margin: 0 16px 16px auto; }
 }
+
+/* --- Phase 2, 3 & 4 UI/UX Polish & Micro-Interactions --- */
+
+/* 1. Floating Glassmorphism Capsule Navbar */
+@media (min-width: 981px) {
+  .nav-desktop {
+    justify-self: center;
+    padding: 5px 8px;
+    border-radius: 9999px;
+    background: rgba(9, 14, 26, 0.55);
+    border: 1px solid rgba(225, 246, 248, 0.22);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 28px -8px rgba(0, 12, 30, 0.45);
+    gap: 6px;
+  }
+
+  .nav-desktop .nav-link {
+    min-height: 36px;
+    padding: 0 16px;
+    border-radius: 9999px;
+    transition: background-color 220ms ease, color 220ms ease;
+  }
+
+  .nav-desktop .nav-link::after {
+    display: none;
+  }
+
+  .nav-desktop .nav-link:hover {
+    background: rgba(225, 246, 248, 0.12);
+  }
+
+  .nav-desktop .nav-link[aria-current="location"] {
+    background: var(--folder-cyan-pale);
+    color: var(--blue-deep);
+    font-weight: 700;
+  }
+}
+
+/* 2. Hero Status Badge & Value Proposition */
+.hero-topline-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  color: #a7f3d0;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-pulse-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.status-pulse-dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #34d399;
+  animation: status-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes status-ping {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  80%, 100% { transform: scale(2); opacity: 0; }
+}
+
+.hero-value-headline {
+  margin: 14px 0 0 !important;
+  max-width: 58ch;
+  color: rgba(225, 246, 248, 0.92) !important;
+  font-family: var(--body) !important;
+  font-size: clamp(1rem, 1.5vw, 1.35rem) !important;
+  font-weight: 600;
+  letter-spacing: -0.01em !important;
+  line-height: 1.45 !important;
+  text-transform: none !important;
+}
+
+.hero-cta-primary {
+  box-shadow: 3px 3px 0 rgba(9, 14, 26, 0.65);
+}
+
+/* 3. Project Showcase: Role Badge, Uniform Geometry & Hover Zoom */
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.project-role-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid var(--blue);
+  background: var(--folder-cyan-pale);
+  color: var(--blue-deep);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 981px) {
+  .project-deck-copy {
+    height: 460px;
+    min-height: 460px;
+    max-height: 460px;
+    padding-top: 16px;
+    justify-content: flex-start;
+  }
+
+  .project-deck-copy h3 {
+    margin-top: 12px;
+  }
+
+  .project-deck-copy > p {
+    margin: 14px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.project-deck .cd-card img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-deck .cd-card[data-top="1"]:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* 4. Asymmetric Bento Grid & Radial Spotlight Hover */
+@media (min-width: 981px) {
+  .bento-stack-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .bento-card--1 { grid-column: span 7; }
+  .bento-card--2 { grid-column: span 5; }
+  .bento-card--3 { grid-column: span 4; }
+  .bento-card--4 { grid-column: span 4; }
+  .bento-card--5 { grid-column: span 4; }
+  .bento-card--6 { grid-column: span 12; }
+}
+
+.bento-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(0, 85, 170, 0.09),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .bento-card:hover::before {
+    opacity: 1;
+  }
+
+  .bento-card:hover {
+    border-color: var(--blue);
+    box-shadow: 4px 4px 0 var(--blue-deep);
+  }
+}
+
+/* 5. Copy-to-Clipboard Email Button & Contact Polish */
+.contact-email-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.contact-email-row > a {
+  margin-top: 0 !important;
+}
+
+.copy-email-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid rgba(225, 246, 248, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--folder-cyan-pale);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.copy-email-button:hover,
+.copy-email-button:focus-visible {
+  background: var(--folder-cyan-pale);
+  color: var(--blue-deep);
+  border-color: var(--folder-cyan-pale);
+}
+
+@media (max-width: 640px) {
+  .hero-status-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .hero-value-headline {
+    font-size: 14px !important;
+  }
+}
+

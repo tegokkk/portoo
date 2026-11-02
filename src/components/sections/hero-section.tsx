@@ -75,7 +75,13 @@ export function HeroSection({ onOpenProject }: HeroSectionProps) {
 
         <motion.div className="hero-cover" variants={staggerItem}>
           <div className="hero-cover-topline">
-            <Sparkles className="hero-symbol" size={44} strokeWidth={1.6} aria-hidden="true" />
+            <div className="hero-topline-left">
+              <Sparkles className="hero-symbol" size={40} strokeWidth={1.6} aria-hidden="true" />
+              <div className="hero-status-badge" role="status" aria-label={profile.status}>
+                <span className="status-pulse-dot" aria-hidden="true" />
+                <span>Available for Projects</span>
+              </div>
+            </div>
             <div className="hero-volume">
               <span>PROJECT</span>
               <span>COMPILATION</span>
@@ -84,15 +90,18 @@ export function HeroSection({ onOpenProject }: HeroSectionProps) {
           </div>
 
           <div className="hero-cover-title">
-            <p>{profile.role} / Indonesia</p>
+            <p className="hero-role-eyebrow">{profile.role} / Indonesia</p>
             <h1>{profile.name}</h1>
+            <p className="hero-value-headline" lang="id">
+              Membangun Aplikasi Web Full-Stack Skalabel, Aman &amp; Berorientasi Performa
+            </p>
           </div>
 
           <div className="hero-cover-bottom">
             <p lang="id">{profile.tagline}</p>
             <div className="hero-cover-actions">
               <a
-                className="hero-cover-link"
+                className="hero-cover-link hero-cta-primary"
                 href="#portfolio"
                 onClick={(event) => {
                   event.preventDefault()
@@ -101,8 +110,11 @@ export function HeroSection({ onOpenProject }: HeroSectionProps) {
               >
                 View projects <ArrowRight size={16} aria-hidden="true" />
               </a>
+              <a className="hero-cover-link hero-cover-link--muted hero-cta-secondary" href={profile.cv} download>
+                <Download size={15} aria-hidden="true" /> Download CV
+              </a>
               <a
-                className="hero-cover-link hero-cover-link--muted"
+                className="hero-cover-link hero-cover-link--muted hero-cta-secondary"
                 href="#contact"
                 onClick={(event) => {
                   event.preventDefault()
@@ -110,9 +122,6 @@ export function HeroSection({ onOpenProject }: HeroSectionProps) {
                 }}
               >
                 <Mail size={15} aria-hidden="true" /> Contact
-              </a>
-              <a className="hero-cover-link hero-cover-link--muted hero-cv-link" href={profile.cv} download>
-                <Download size={15} aria-hidden="true" /> Download CV
               </a>
               {onOpenProject ? (
                 <button
