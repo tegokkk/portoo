@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/readme/portfolio-work.png" alt="Halaman pembuka portofolio Tego Saputra dengan judul WORK" width="100%" />
+  <img src="docs/readme/portfolio-porto.png" alt="Halaman pembuka portofolio Tego Saputra dengan judul PORTO" width="100%" />
 </p>
 <p align="center">
   <img src="docs/readme/portfolio-about.png" alt="Halaman About portofolio dengan ID card dan ringkasan profil Tego Saputra" width="100%" />
