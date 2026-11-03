@@ -25,7 +25,7 @@ export function CertificateSection({ onOpenChange }: { onOpenChange: (open: bool
         <div className="certificate-gallery-heading">
           <p className="section-kicker">Credentials / Learning archive</p>
           <h2>Certificates<span>.</span></h2>
-          <p lang="id">Koleksi sertifikasi kursus, eksplorasi AI &amp; data, serta partisipasi forum teknologi yang pernah saya ikuti.</p>
+          <p lang="id">Koleksi pencatatan hak cipta, sertifikasi kursus, eksplorasi AI &amp; data, serta partisipasi forum teknologi.</p>
         </div>
         <div className="certificate-rail-wrap">
           <PictureRailGallery

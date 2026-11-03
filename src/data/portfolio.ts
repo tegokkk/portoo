@@ -346,6 +346,17 @@ const certificate: Certificate = {
 }
 
 const certificates: Certificate[] = [
+  {
+    slug: "hki-ormawa-hmj",
+    name: "HKI — Sistem Informasi Manajemen ORMAWA dan HMJ Berbasis Web dengan Arsitektur Multi-Tenant",
+    issuer: "Kementerian Hukum Republik Indonesia",
+    recipient: "Tego Saputra (pencipta bersama)",
+    issuedAt: "3 November 2026 (tanggal permohonan)",
+    credentialId: "Nomor pencatatan: 001584450",
+    file: "/assets/hki-ormawa-hmj.pdf",
+    preview: "/assets/hki-ormawa-hmj.png",
+    previewSize: { width: 835, height: 1181 },
+  },
   certificate,
   {
     slug: "generative-ai-software-development",
