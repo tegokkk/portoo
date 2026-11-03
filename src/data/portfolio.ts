@@ -355,6 +355,7 @@ const certificates: Certificate[] = [
     credentialId: "Nomor pencatatan: 001584450",
     file: "/assets/hki-ormawa-hmj.pdf",
     preview: "/assets/hki-ormawa-hmj.png",
+    backPreview: "/assets/hki-ormawa-hmj-page-2.png",
     previewSize: { width: 835, height: 1181 },
   },
   certificate,

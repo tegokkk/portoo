@@ -14,6 +14,8 @@ export interface PictureRailItem {
   year?: string;
   /** Artwork shown behind the glass. */
   image: string;
+  /** Optional artwork shown on the reverse of the frame. */
+  backImage?: string;
   /** Width ÷ height of the artwork. Defaults to 0.8 (a 4:5 portrait). */
   aspect?: number;
   /** Frame moulding. Defaults to "black". */
@@ -1200,7 +1202,9 @@ function Detail({ uid, item, shape, index, total, labels, reduced, source, onLif
                 <FrameArt item={item} shape={shape} unit={unit} lit={0.85} />
               </div>
               <div data-face="back" className="absolute inset-0 [backface-visibility:hidden]" style={{ transform: "rotateY(180deg)" }}>
-                <FrameBack item={item} shape={shape} unit={unit} />
+                {item.backImage
+                  ? <FrameArt item={{ ...item, image: item.backImage, title: `${item.title} — halaman kedua` }} shape={shape} unit={unit} lit={0.85} />
+                  : <FrameBack item={item} shape={shape} unit={unit} />}
               </div>
             </div>
           </div>

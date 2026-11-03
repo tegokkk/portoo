@@ -10,6 +10,7 @@ const railItems: PictureRailItem[] = certificates.map((certificate, index) => ({
   artist: certificate.issuer,
   year: certificate.issuedAt,
   image: certificate.preview,
+  backImage: certificate.backPreview,
   aspect: certificate.previewSize.width / certificate.previewSize.height,
   frame: frames[index % frames.length],
   mat: true,

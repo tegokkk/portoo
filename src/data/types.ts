@@ -79,6 +79,7 @@ export interface Certificate {
   verifyUrl?: string
   file: string
   preview: string
+  backPreview?: string
   previewSize: ScreenshotSize
 }
 
