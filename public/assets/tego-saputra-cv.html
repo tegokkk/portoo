@@ -2,102 +2,331 @@
 <html lang="id">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CV Tego Saputra</title>
     <style>
+      @page {
+        size: A4;
+        margin: 12mm 14mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
       body {
         margin: 0;
-        padding: 42px;
+        background: #eee;
         color: #151515;
-        font-family: Arial, sans-serif;
-        line-height: 1.55;
+        font:
+          10pt/1.4 Arial,
+          sans-serif;
+      }
+      main {
+        max-width: 210mm;
+        margin: 24px auto;
+      }
+      .page {
+        background: white;
+        padding: 12mm 14mm;
+        margin-bottom: 20px;
       }
       h1 {
-        margin: 0;
-        font-size: 42px;
-      }
-      h2 {
-        margin: 30px 0 10px;
-        font-size: 16px;
-        text-transform: uppercase;
-        border-bottom: 1px solid #cccccc;
-        padding-bottom: 6px;
-      }
-      p,
-      li {
-        font-size: 13px;
+        margin: 0 0 3px;
+        font-size: 27pt;
+        line-height: 1.15;
       }
       .role {
-        margin: 4px 0 14px;
-        color: #444444;
-        font-size: 18px;
-        font-weight: 700;
+        margin: 0 0 8px;
+        font-size: 11pt;
+        font-weight: bold;
       }
-      .meta {
-        color: #555555;
-        font-size: 12px;
+      .contact {
+        margin: 0;
+        font-size: 9pt;
       }
-      .item {
-        margin-bottom: 14px;
+      a {
+        color: inherit;
+        text-decoration: none;
       }
-      .item strong {
-        display: block;
+      h2 {
+        font-size: 11pt;
+        margin: 15px 0 7px;
+        text-transform: uppercase;
+      }
+      h3 {
+        font-size: 10pt;
+        margin: 0 0 2px;
+      }
+      p {
+        margin: 0 0 4px;
       }
       ul {
-        margin: 8px 0 0 18px;
-        padding: 0;
+        margin: 3px 0 0;
+        padding-left: 15px;
+      }
+      li {
+        margin-bottom: 3px;
+      }
+      .credential {
+        margin-bottom: 7px;
+        break-inside: avoid;
+      }
+      .project {
+        margin-bottom: 3pt;
+        break-inside: avoid;
+      }
+      .project p {
+        font-size: 9.4pt;
+        line-height: 11.3pt;
+        margin-bottom: 1pt;
+      }
+      .project .stack {
+        color: #444;
+        font-size: 8.5pt;
+        line-height: 9.5pt;
+      }
+      @media print {
+        body {
+          background: white;
+        }
+        main {
+          margin: 0;
+          max-width: none;
+        }
+        .page {
+          padding: 0;
+          margin: 0;
+        }
+        .page + .page {
+          break-before: page;
+        }
+      }
+      @media (max-width: 600px) {
+        main {
+          margin: 0;
+        }
+        .page {
+          padding: 24px;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Tego Saputra</h1>
-    <p class="role">Full-Stack Web Developer</p>
-    <p class="meta">
-      GitHub: github.com/tegokkk | LinkedIn: tego-saputra-893782383 | Email:
-      tegosaputra02@gmail.com
-    </p>
-
-    <h2>Profil</h2>
-    <p>
-      Mahasiswa D3 Manajemen Informatika di bidang Teknologi Informasi sejak 2024. Fokus pada
-      pengembangan aplikasi web full-stack dengan React, Node.js, Express, Prisma, PostgreSQL,
-      Supabase, autentikasi JWT, dan UI yang mudah digunakan.
-    </p>
-
-    <h2>Pendidikan</h2>
-    <div class="item">
-      <strong>D3 Manajemen Informatika</strong>
-      <span>Teknologi Informasi | 2024 - Sekarang</span>
-    </div>
-
-    <h2>Proyek</h2>
-    <div class="item">
-      <strong>ABSENAPEL - Smart Attendance</strong>
-      <span>React, Vite, Tailwind CSS, Node.js, Express, Prisma, PostgreSQL, Supabase</span>
-      <ul>
-        <li>Absensi digital dengan validasi GPS dan selfie sebagai bukti hadir.</li>
-        <li>Dashboard admin untuk jadwal, lokasi, izin, dan rekap absensi.</li>
-      </ul>
-    </div>
-    <div class="item">
-      <strong>CARIMAKAN</strong>
-      <span>React, Vite, Tailwind CSS, GSAP, Node.js, Express, Prisma, PostgreSQL, Supabase</span>
-      <ul>
-        <li>Platform pemesanan makanan lokal dengan cart, checkout, favorit, review, dan admin panel.</li>
-        <li>Mengelola menu, restoran, user, dan pesanan melalui panel terpisah.</li>
-      </ul>
-    </div>
-
-    <h2>Sertifikat</h2>
-    <div class="item">
-      <strong>AI Foundations - OpenAI Academy</strong>
-      <span>Diterbitkan 30 Juni 2026 | ID: qcvcdqayjl</span>
-    </div>
-
-    <h2>Tech Stack</h2>
-    <p>
-      React 19 / Vite / React Router / Tailwind CSS / Framer Motion / GSAP / Lenis / Axios / Node.js
-      / Express / Prisma ORM / PostgreSQL / Supabase / JWT / Bcrypt / Zod / ESLint / GitHub / Netlify
-      / Vercel
-    </p>
+    <main>
+      <article class="page">
+        <h1>TEGO SAPUTRA</h1>
+        <p class="role">Mahasiswa Manajemen Informatika | Full-Stack Web Developer</p>
+        <p class="contact">
+          <a href="mailto:tegosaputra02@gmail.com">tegosaputra02@gmail.com</a> | Bandar Lampung,
+          Indonesia
+        </p>
+        <p class="contact">
+          <a href="https://github.com/tegokkk">GitHub: github.com/tegokkk</a> |
+          <a href="https://www.linkedin.com/in/tego-saputra-893782383/"
+            >LinkedIn: tego-saputra-893782383</a
+          >
+        </p>
+        <section>
+          <h2>Profil</h2>
+          <p>
+            Mahasiswa D3 Manajemen Informatika di Politeknik Negeri Lampung dengan pengalaman
+            mengembangkan aplikasi web full-stack dan mobile melalui proyek perkuliahan dan pribadi.
+            Terbiasa merancang antarmuka, REST API, dan basis data, serta mengintegrasikan
+            autentikasi dan hak akses. Aktif berorganisasi dengan pengalaman koordinasi tim dan
+            pelaksanaan kegiatan mahasiswa.
+          </p>
+        </section>
+        <section>
+          <h2>Pendidikan</h2>
+          <h3>Politeknik Negeri Lampung</h3>
+          <p>D3 Manajemen Informatika, Jurusan Teknologi Informasi | 2024 - Sekarang</p>
+        </section>
+        <section>
+          <h2>Keterampilan</h2>
+          <p><b>Bahasa:</b> JavaScript, TypeScript, HTML, CSS, SQL, Dart, PHP, Python.</p>
+          <p>
+            <b>Web dan mobile:</b> React, Next.js, Vite, Tailwind CSS, Flutter, Node.js, Express,
+            REST API.
+          </p>
+          <p><b>Basis data:</b> PostgreSQL, MySQL atau MariaDB, Prisma ORM, Knex.js.</p>
+          <p>
+            <b>Tools dan praktik:</b> Git, GitHub, Vercel, Netlify, JWT, validasi input, Playwright,
+            Vitest.
+          </p>
+          <p>
+            <b>Kolaborasi:</b> Koordinasi tim, komunikasi, kerja sama, perencanaan kegiatan, dan
+            pemecahan masalah.
+          </p>
+        </section>
+        <section>
+          <h2>Pengalaman organisasi</h2>
+          <h3>Himpunan Mahasiswa Manajemen Informatika (HIMA POINTER)</h3>
+          <h3>Wakil Kepala Divisi Minat dan Bakat</h3>
+          <ul>
+            <li>
+              Berperan dalam koordinasi dan pelaksanaan program kerja bidang minat dan bakat
+              mahasiswa.
+            </li>
+            <li>
+              Membantu menyusun perencanaan kegiatan dan melakukan koordinasi dengan anggota
+              organisasi.
+            </li>
+            <li>
+              Mendukung pengembangan kreativitas, potensi, serta partisipasi mahasiswa melalui
+              kegiatan organisasi.
+            </li>
+            <li>
+              Melakukan komunikasi dan kerja sama dengan berbagai pihak untuk mendukung kelancaran
+              kegiatan.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Pengalaman kepanitiaan</h2>
+          <h3>Koordinator Lapangan - Musyawarah Besar (MUBES) 2025</h3>
+          <ul>
+            <li>Membantu mengoordinasikan persiapan dan pelaksanaan kegiatan di lapangan.</li>
+            <li>Memastikan koordinasi antarpanitia berjalan dengan baik.</li>
+            <li>Mendukung kelancaran teknis acara sesuai dengan susunan kegiatan.</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Sertifikasi dan pencatatan ciptaan</h2>
+          <div class="credential">
+            <h3>Pencipta bersama program komputer SIM ORMAWA dan HMJ</h3>
+            <p>
+              Surat Pencatatan Ciptaan, Kementerian Hukum RI. Nomor pencatatan 001584450; permohonan
+              3 November 2026.
+            </p>
+          </div>
+          <div class="credential">
+            <h3>AI Foundations</h3>
+            <p>OpenAI Academy | 30 Juni 2026 | ID qcvcdqayjl.</p>
+          </div>
+          <div class="credential">
+            <h3>Pelatihan pengembangan perangkat lunak dengan AI</h3>
+            <p>
+              IBM SkillsBuild | 2025-2026. Use Generative AI for Software Development, IBM Granite
+              Models for Software Development, serta Code Generation and Optimization Using IBM
+              Granite.
+            </p>
+          </div>
+        </section>
+      </article>
+      <article class="page">
+        <h2>Pengalaman proyek</h2>
+        <section class="project">
+          <h3>VenueConnect Polinela</h3>
+          <p>
+            Mengembangkan sistem reservasi, peminjaman, dan penyewaan fasilitas kampus dengan
+            katalog gedung, alur pengajuan, serta pengelolaan data melalui dashboard.
+          </p>
+          <p class="stack">Next.js, React, TypeScript, Prisma, PostgreSQL</p>
+        </section>
+        <section class="project">
+          <h3>SIM ORMAWA dan HMJ</h3>
+          <p>
+            Mengembangkan sistem organisasi mahasiswa dengan arsitektur multi-tenant, pengelolaan
+            anggota dan program kerja, serta pembatasan akses berdasarkan peran dan organisasi.
+          </p>
+          <p class="stack">Next.js, TypeScript, Express, Prisma, MySQL</p>
+        </section>
+        <section class="project">
+          <h3>POINTER PHOTOBOOTH</h3>
+          <p>
+            Mengembangkan kiosk foto berbasis browser dengan pilihan bingkai, pengambilan dan retake
+            foto, pengolahan Canvas, cetak 4R, serta berbagi hasil melalui QR.
+          </p>
+          <p class="stack">Next.js, React, Express, Prisma, PostgreSQL, S3-compatible storage</p>
+        </section>
+        <section class="project">
+          <h3>Smart Attendance atau ABSENAPEL</h3>
+          <p>
+            Mengembangkan absensi apel dengan validasi GPS dan selfie, pengajuan izin, dashboard
+            admin, serta aplikasi Flutter yang terhubung ke API untuk mahasiswa.
+          </p>
+          <p class="stack">React, Express, Prisma, PostgreSQL, Flutter, Dart</p>
+        </section>
+        <section class="project">
+          <h3>Peminjaman Lapangan Olahraga</h3>
+          <p>
+            Mengembangkan MVP mobile untuk katalog lapangan, jadwal, pemesanan, pembatalan, dan
+            verifikasi pembayaran tunai; API memeriksa bentrok jadwal dalam transaksi database.
+          </p>
+          <p class="stack">Flutter, Dart, PHP REST API, MySQL atau MariaDB</p>
+        </section>
+        <section class="project">
+          <h3>SAKURA Lab</h3>
+          <p>
+            Mengembangkan sistem peminjaman laboratorium dengan kalender ketersediaan, persetujuan
+            dua tahap, notifikasi, audit trail, serta ekspor laporan operasional.
+          </p>
+          <p class="stack">React, Vite, Node.js, Express, Prisma, PostgreSQL</p>
+        </section>
+        <section class="project">
+          <h3>CARIMAKAN</h3>
+          <p>
+            Mengembangkan platform pemesanan makanan dengan katalog, keranjang, checkout, favorit,
+            dan ulasan; menyediakan dashboard pengelolaan bagi admin dan merchant.
+          </p>
+          <p class="stack">React, Tailwind CSS, GSAP, Express, Prisma, PostgreSQL</p>
+        </section>
+        <section class="project">
+          <h3>Zyro Space</h3>
+          <p>
+            Mengembangkan sistem penjualan voucher kuota dengan katalog provider, checkout, invoice
+            bertoken, verifikasi pembayaran QRIS, serta pencatatan penyerahan voucher melalui admin.
+          </p>
+          <p class="stack">React, Node.js, Express, PostgreSQL</p>
+        </section>
+        <section class="project">
+          <h3>KonterKuota</h3>
+          <p>
+            Mengembangkan direktori konter dan paket data dengan pencarian wilayah, filter provider,
+            kontak WhatsApp, serta dashboard pengelolaan katalog dan publikasi paket per konter.
+          </p>
+          <p class="stack">Next.js, React, Tailwind CSS, Express, Knex.js, PostgreSQL</p>
+        </section>
+        <section class="project">
+          <h3>DECORMOMENT.BDL</h3>
+          <p>
+            Mengembangkan landing page penyewaan papan ucapan akrilik dengan galeri produk, carousel
+            interaktif, desain responsif, metadata SEO, serta pemesanan melalui WhatsApp.
+          </p>
+          <p class="stack">Next.js, React, CSS Modules, Lenis</p>
+        </section>
+        <section class="project">
+          <h3>Sistem Informasi Data Mahasiswa dan KTM</h3>
+          <p>
+            Mengembangkan CRUD data mahasiswa dengan validasi server, penyimpanan MySQL, pratinjau
+            KTM interaktif, serta keluaran kartu yang dapat dicetak atau disimpan sebagai PDF.
+          </p>
+          <p class="stack">PHP, PDO, MySQL, HTML, CSS, JavaScript</p>
+        </section>
+        <section class="project">
+          <h3>PALUGADA atau ASISTENKU</h3>
+          <p>
+            Mengembangkan prototipe asisten desktop berbasis suara dengan wake word, pengenalan
+            ucapan, respons audio, serta modul perintah aplikasi dan pencarian.
+          </p>
+          <p class="stack">Python, SpeechRecognition, pyttsx3, OpenAI API</p>
+        </section>
+        <section class="project">
+          <h3>PasarIsyarat</h3>
+          <p>
+            Berkontribusi pada konsep dan prototipe UX transaksi inklusif bagi pengguna Tuli, dengan
+            katalog visual, kartu percakapan, dan konfirmasi transaksi dua arah untuk GEMASTIK.
+          </p>
+          <p class="stack">Prototipe HTML, CSS, JavaScript; perancangan UX</p>
+        </section>
+        <section class="project">
+          <h3>TEGO.DEV</h3>
+          <p>
+            Mengembangkan portofolio pribadi untuk menampilkan profil, proyek, sertifikat, CV, dan
+            kontak dengan antarmuka responsif, animasi, serta struktur komponen bertipe.
+          </p>
+          <p class="stack">React, TypeScript, Vite, Motion, Lenis</p>
+        </section>
+      </article>
+    </main>
   </body>
 </html>
